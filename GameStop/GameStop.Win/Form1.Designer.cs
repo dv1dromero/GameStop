@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.productosBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosBLDataGridView = new System.Windows.Forms.DataGridView();
-            this.listadeProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listadeProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.productosBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBLDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadeProductosBindingSource)).BeginInit();
@@ -60,11 +60,6 @@
             this.productosBLDataGridView.Size = new System.Drawing.Size(518, 383);
             this.productosBLDataGridView.TabIndex = 0;
             // 
-            // listadeProductosBindingSource
-            // 
-            this.listadeProductosBindingSource.DataMember = "ListadeProductos";
-            this.listadeProductosBindingSource.DataSource = this.productosBLBindingSource;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -83,11 +78,16 @@
             this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
             // 
+            // listadeProductosBindingSource
+            // 
+            this.listadeProductosBindingSource.DataMember = "ListadeProductos";
+            this.listadeProductosBindingSource.DataSource = this.productosBLBindingSource;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 443);
+            this.ClientSize = new System.Drawing.Size(689, 443);
             this.Controls.Add(this.productosBLDataGridView);
             this.Name = "Form1";
             this.Text = "Form1";
