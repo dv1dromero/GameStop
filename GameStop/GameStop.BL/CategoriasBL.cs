@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace GameStop.BL
 {
-    class CategoriasBL
+    public class CategoriaBL
     {
         Contexto _contexto;
+        public List<Categoria> ListadeCategorias{ get; set; }
 
-        public List<Categoria> ListadeCategorias { get; set; }
-
-        public CategoriasBL()
+        public CategoriaBL()
         {
             _contexto = new Contexto();
             ListadeCategorias = new List<Categoria>();
         }
-
         public List<Categoria> ObtenerCategorias()
         {
             ListadeCategorias = _contexto.Categorias.ToList();
@@ -35,20 +33,26 @@ namespace GameStop.BL
                 var categoriaExistente = _contexto.Categorias.Find(categoria.Id);
                 categoriaExistente.Descripcion = categoria.Descripcion;
             }
+
             _contexto.SaveChanges();
         }
 
         public Categoria ObtenerCategoria(int id)
         {
             var categoria = _contexto.Categorias.Find(id);
+
             return categoria;
+
         }
 
         public void EliminarCategoria(int id)
         {
             var categoria = _contexto.Categorias.Find(id);
+
             _contexto.Categorias.Remove(categoria);
             _contexto.SaveChanges();
         }
+
     }
+
 }
