@@ -30,8 +30,8 @@ namespace GameStop.WebAdmi.Controllers
             var nuevoProducto = new Producto();
             var categorias = _categoriasBL.ObtenerCategorias();
 
-            ViewBag.ListaCategorias = 
-                new SelectList(categorias, "Id", "Descripcion");
+            ViewBag.CategoriaId = 
+                new SelectList(categorias, "id", "Descripcion");
 
             return View(nuevoProducto);
         }
@@ -46,6 +46,10 @@ namespace GameStop.WebAdmi.Controllers
         public ActionResult Editar(int id)
         {
             var producto = _productosBL.ObtenerProducto(id);
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId =
+                new SelectList(categorias, "Id", "Descripcion", producto.CategoriaId);
 
             return View(producto);
         }
